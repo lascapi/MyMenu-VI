@@ -218,7 +218,7 @@ public class OrderTest {
         System.setIn(new ByteArrayInputStream("5\n1\n".getBytes()));
         order = new Order();
         String[] responses = {"BMW", "Audi", "Mercedes"};
-        Interaction.askSomething("voiture", responses);
+        order.askSomething("voiture", responses);
         String[] output = outContent.toString().replace("\r\n", "\n").split("\n");
         assertEquals(true, output[0].contains("voiture"));
         assertEquals("Vous n'avez pas choisi de voiture parmi les choix proposés", output[5]);
@@ -253,7 +253,7 @@ public class OrderTest {
         System.setIn(new ByteArrayInputStream("5\n2\n".getBytes()));
         order = new Order();
         String[] responses = {"BMW", "Audi", "Mercedes"};
-        int choice = Interaction.askSomething("voiture", responses);
+        int choice = order.askSomething("voiture", responses);
         assertEquals(2, choice);
     }
     @Test
