@@ -11,7 +11,7 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class OrderTest {
+class OrderTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -25,7 +25,7 @@ public class OrderTest {
         System.setOut(System.out);
     }
 
-    Order order = new Order();
+    com.ocr.anthony.Order order = new com.ocr.anthony.Order();
 
     @Test
     public void Given_Chicken_When_DisplayMenuSelected_Then_DisplayChickenSentence() {
