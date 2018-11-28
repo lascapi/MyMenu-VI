@@ -4,12 +4,18 @@ import java.util.Scanner;
 
 public class Interaction {
 
+    private static String category;
+    private static String[] responses;
+
     /**
      * Display a question about a category in the standard input, get response and display it
      * @param category the category of the question
      * @param responses available responses
+     * @return the number of the selected choice
      */
-    public static void askSomething(String category, String[] responses) {
+    public static int askSomething(String category, String[] responses) {
+        Interaction.category = category;
+        Interaction.responses = responses;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Choix " + category);
@@ -31,5 +37,6 @@ public class Interaction {
                     System.out.println("Vous n'avez pas choisi de " + category + " parmi les choix proposés");
             }
         } while (!responseIsGood);
+        return nbResponse;
     }
 }
