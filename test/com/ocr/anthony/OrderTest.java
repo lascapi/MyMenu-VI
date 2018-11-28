@@ -213,6 +213,7 @@ public class OrderTest {
         assertEquals("Vous n'avez pas choisi de boisson parmi les choix proposés", output[17]);
         assertEquals("Vous avez choisi comme boisson : soda", output[18]);
     }
+
     @Test
     public void Given_BadResponseAndResponse1_When_AskAboutCarWithThreeResponses_Then_DisplayErrorAndGoodResponse() {
         System.setIn(new ByteArrayInputStream("5\n1\n".getBytes()));
@@ -248,6 +249,7 @@ public class OrderTest {
         String[] output = outContent.toString().replace("\r\n", "\n").split("\n");
         assertEquals("Vous avez choisi comme boisson : eau plate", output[5]);
     }
+
     @Test
     public void Given_Response2_When_AskAboutCarWithThreeResponses_Then_ReturnNumber2() {
         System.setIn(new ByteArrayInputStream("5\n2\n".getBytes()));
